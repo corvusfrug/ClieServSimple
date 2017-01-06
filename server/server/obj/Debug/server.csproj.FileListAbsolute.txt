@@ -1,0 +1,5 @@
+C:\Users\Грач\Documents\cliSer\server\server\bin\Debug\server.exe
+C:\Users\Грач\Documents\cliSer\server\server\bin\Debug\server.pdb
+C:\Users\Грач\Documents\cliSer\server\server\obj\Debug\server.csprojResolveAssemblyReference.cache
+C:\Users\Грач\Documents\cliSer\server\server\obj\Debug\server.exe
+C:\Users\Грач\Documents\cliSer\server\server\obj\Debug\server.pdb
