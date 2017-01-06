@@ -7,6 +7,53 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="4*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Row="0" Grid.Column="0">
+            <Label Content="Адрес сервера"/>
+            <Label Content="Порт"/>
+        </StackPanel>
+        <StackPanel Grid.Row="0" Grid.Column="1">
+            <TextBox 
+                Text="" 
+                Height="20" 
+                Width="120"  
+                Margin="0,5,0,5"
+                HorizontalAlignment="Left"
+                Background="DarkGray"/>
+            <TextBox 
+                Text="" 
+                Height="20" 
+                Width="50"
+                HorizontalAlignment="Left"
+                Background="DarkGray"/>
+        </StackPanel>
+        <StackPanel Grid.Row="0" Grid.Column="2">
+            <Button 
+                Name="btnConnect"
+                Content="Подключиться" 
+                Height="20" 
+                Width="100"  
+                Margin="75,22,75,22"
+                HorizontalAlignment="Left"
+                Background="DarkGray"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" 
+                    Grid.Column="0" 
+                    Grid.ColumnSpan="3"
+                    >
+            <TextBox TextWrapping="Wrap" 
+                     VerticalScrollBarVisibility="Auto" 
+                     IsReadOnly="True"
+                     Height="250"/>
+        </StackPanel>
         
     </Grid>
 </Window>
