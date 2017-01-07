@@ -64,7 +64,20 @@ namespace server
                         Console.WriteLine("Port: {0}",port);
                     }
                 }
+                // Посмотреть что есть в сети
+                if (command.StartsWith("get host net"))
+                {
+                    PrintHostNet();
+                }
 
+            }
+        }
+        static void PrintHostNet()
+        {
+            IPHostEntry ipHost = Dns.GetHostEntry("localhost");
+            foreach(IPAddress i in ipHost.AddressList)
+            {
+                Console.WriteLine(i);
             }
         }
     }
