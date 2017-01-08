@@ -1,0 +1,86 @@
+﻿<Window x:Class="client.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:client"
+        mc:Ignorable="d"
+        Title="Клиент" Height="350" Width="525" ResizeMode="CanMinimize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="4*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Row="0" Grid.Column="0">
+            <Label Content="Адрес сервера"/>
+            <Label Content="Порт"/>
+        </StackPanel>
+        <StackPanel Grid.Row="0" Grid.Column="1">
+            <TextBox 
+                Name="tbAddres"
+                Text="" 
+                Height="20" 
+                Width="120"  
+                Margin="0,5,0,5"
+                HorizontalAlignment="Left"
+                Background="DarkGray"/>
+            <TextBox 
+                Name="tbPort"
+                Text="" 
+                Height="20" 
+                Width="50"
+                HorizontalAlignment="Left"
+                Background="DarkGray"/>
+        </StackPanel>
+        <StackPanel Grid.Row="0" Grid.Column="2">
+            <Button 
+                Name="btnConnect"
+                Content="Подключиться" 
+                Height="20" 
+                Width="100"  
+                Margin="75,22,75,22"
+                HorizontalAlignment="Left"
+                Background="DarkGray" Click="btnConnect_Click"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" 
+                    Grid.Column="0" 
+                    Grid.ColumnSpan="3"
+                    >
+            <StackPanel Orientation="Horizontal">
+                <TextBox
+                    Name="tbMessage"
+                    IsEnabled="False"
+                    Text="" 
+                    Height="20" 
+                    Width="300"  
+                    Margin="5,5,0,5"
+                    HorizontalAlignment="Left"
+                    Background="DarkGray"/>
+                <Button
+                    IsEnabled="False"
+                    Name="btnWrite"
+                    Content="Отправить" 
+                    Height="20" 
+                    Width="100"  
+                    Margin="25,5,5,5"
+                    HorizontalAlignment="Center"
+                    Background="DarkGray" Click="btnWrite_Click"/>
+            </StackPanel> 
+            <TextBox 
+                IsEnabled="False"
+                Name="tbChat"
+                TextWrapping="Wrap"
+                Background="LightGray"
+                VerticalScrollBarVisibility="Auto" 
+                IsReadOnly="True"
+                Height="215"
+                Width="500"/>
+        </StackPanel>
+        
+    </Grid>
+</Window>
