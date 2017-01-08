@@ -104,7 +104,7 @@ namespace server
                     string[] tmp = command.Split(' ');
                     try
                     {
-                        if (tmp.Length > 2) throw new Exception();
+                        if (tmp.Length > 3) throw new Exception();
                         port = Int32.Parse(tmp[2]);
                     }
                     catch(Exception ex)
