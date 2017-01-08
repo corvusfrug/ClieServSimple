@@ -46,10 +46,61 @@ namespace server
 
                     ListnerSocet.Bind(ipEndPoint);
                     ListnerSocet.Listen(5);
-                    /*while (true)
-                    {
 
-                    }*/
+                    Console.WriteLine("Ожидаем соединение через порт {0}", ipEndPoint);
+                    Socket handler = ListnerSocet.Accept();
+                    string data = "";
+
+                    // Мы дождались клиента, пытающегося с нами соединиться
+
+                    // Отправляем ответ клиенту
+                    string reply = "Server-> Подключился, готов!\n";
+                    byte[] msg = Encoding.UTF8.GetBytes(reply);
+                    handler.Send(msg);
+
+                    byte[] bytes = new byte[1024];
+                    int bytesRec = handler.Receive(bytes);
+
+                    data += Encoding.UTF8.GetString(bytes, 0, bytesRec);
+
+                    Console.WriteLine(data);
+
+                    handler.Shutdown(SocketShutdown.Both);
+                    handler.Close();
+                    Console.WriteLine("Есть подключение через порт {0}\n", ipEndPoint);
+
+                    while (true)
+                    {
+                        Console.WriteLine("Подключение через порт {0}", ipEndPoint);
+
+                        // Программа приостанавливается, ожидая входящее соединение
+                        handler = ListnerSocet.Accept();
+                        data = "";
+
+                        bytes = new byte[1024];
+                        bytesRec = handler.Receive(bytes);
+
+                        data += Encoding.UTF8.GetString(bytes, 0, bytesRec);
+
+                        // Показываем данные на консоли
+                        Console.WriteLine(data+"\n");
+                        // Отправляем ответ клиенту\
+                        reply = "Server-> Спасибо за запрос в " + data.Length.ToString()
+                                + " символов";
+                       msg = Encoding.UTF8.GetBytes(reply);
+                       handler.Send(msg);
+
+                        if (data.IndexOf("Shutdown") > -1)
+                        {
+                            Console.WriteLine("Сервер завершил соединение с клиентом.");
+                            handler.Shutdown(SocketShutdown.Both);
+                            handler.Close();
+                            break;
+                        }
+
+                        handler.Shutdown(SocketShutdown.Both);
+                        handler.Close();
+                    }
                 }
 
                 // Установить порт

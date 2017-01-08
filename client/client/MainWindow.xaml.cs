@@ -91,6 +91,15 @@ namespace client
             // Получаем ответ от сервера о готовности
             tmpMessage = send.Receive(bytes);
             tbChat.Text += Encoding.UTF8.GetString(bytes, 0, tmpMessage) + "\n";
+            string message = NicName + " (Клиент)-> Подключился, готов!";
+
+            byte[] msg = Encoding.UTF8.GetBytes(message);
+
+            // Отправляем данные через сокет
+            int bytesSent = send.Send(msg);
+
+            //send.Shutdown(SocketShutdown.Both);
+            //send.Close();
 
             // Выключаем и закрываем сокет в EndConnect();
 
@@ -129,7 +138,18 @@ namespace client
 
         private void btnWrite_Click(object sender, RoutedEventArgs e)
         {
-            
+            send = new Socket(ServerIP.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
+
+            try
+            {
+                send.Connect(ipEndPoint);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Соединение разорвано. " + ex.Message);
+                return;
+            }
+
             byte[] bytes = new byte[1024];
             string message = tbMessage.Text.ToString();
             tbMessage.Text = "";
@@ -141,11 +161,14 @@ namespace client
             // Отправляем данные через сокет
             int bytesSent = send.Send(msg);
 
-            tbChat.Text += message + "\n";
+            tbChat.Text += message;
             // Получаем ответ от сервера
             int bytesRec = send.Receive(bytes);
 
-            tbChat.Text += Encoding.UTF8.GetString(bytes, 0, bytesRec);
+            tbChat.Text += Encoding.UTF8.GetString(bytes, 0, bytesRec) + "\n";
+
+            send.Shutdown(SocketShutdown.Both);
+            send.Close();
 
             // Выходим если введена команда на выключение
             if (message.IndexOf("Shutdown") != -1)
