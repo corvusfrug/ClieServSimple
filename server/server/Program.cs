@@ -132,8 +132,8 @@ namespace server
                     string[] tmp = command.Split(' ');
                     try
                     {
-                        if (tmp.Length > 2) throw new Exception();
-                        ip = new IPAddress(Int32.Parse(tmp[2]));
+                        if (tmp.Length > 3) throw new Exception();
+                        ip = new IPAddress(ParseAdres(tmp[2]));
                     }
                     catch (Exception ex)
                     {
@@ -142,7 +142,10 @@ namespace server
                     }
                     finally
                     {
-                        Console.WriteLine("IP: null");
+                        if(ip==null)
+                            Console.WriteLine("IP: null");
+                        else
+                            Console.WriteLine("IP: {0}",ip);
                     }
                 }
                 // Текущее состояние
@@ -215,6 +218,17 @@ namespace server
 
             Console.WriteLine("************************************************");
             Console.WriteLine("************************************************");
+        }
+        static byte[] ParseAdres(string arg)
+        {
+            string[] tmpArr = arg.Split('.');
+            byte[] result = new byte[tmpArr.Length];
+
+            for (int i = 0; i < tmpArr.Length; ++i)
+            {
+                result[i] = byte.Parse(tmpArr[i]);
+            }
+            return result;
         }
     }
 }
