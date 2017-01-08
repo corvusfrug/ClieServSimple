@@ -120,10 +120,9 @@ namespace client
         private void EndConnect()
         {
             // Выключаем и закрываем сокет
-            if (send.IsBound)
-            {
-                send.Shutdown(SocketShutdown.Both);
-                send.Close();
+            
+                /*send.Shutdown(SocketShutdown.Both);
+                send.Close();*/
 
                 //Лочим и анлочим
                 tbAddres.IsEnabled = true;
@@ -133,7 +132,7 @@ namespace client
                 tbMessage.IsEnabled = false;
                 tbChat.IsEnabled = false;
                 btnWrite.IsEnabled = false;
-            }
+            
         }
 
         private void btnWrite_Click(object sender, RoutedEventArgs e)
