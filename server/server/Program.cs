@@ -18,11 +18,6 @@ namespace server
             string command = "";
             while(command!=QUIT)
             {
-                /*IPHostEntry ipHost = Dns.GetHostEntry("localhost");
-                IPAddress ipAddr = ipHost.AddressList[0];
-                //IPAddress ipAddr2 = new IPAddress(new byte[] { 10, 10, 10, 30});
-
-                Console.WriteLine(ipAddr);*/
                 Console.Write("Server: > ");
                 command = Console.ReadLine();
 
@@ -165,11 +160,10 @@ namespace server
         }
         static void PrintHostNet()
         {
-            IPHostEntry ipHost = Dns.GetHostEntry("localhost");
-            foreach(IPAddress i in ipHost.AddressList)
-            {
+            IPAddress[] tmpp = Dns.GetHostAddresses(Dns.GetHostName());
+            //IPAddress ipAddr2 = new IPAddress(new byte[] { 10, 10, 10, 30});
+            foreach (var i in tmpp)
                 Console.WriteLine(i);
-            }
         }
         static void PrintHelp()
         {
@@ -209,11 +203,7 @@ namespace server
 
             Console.WriteLine("\tget host net");
             Console.WriteLine("На самом деле фиг знает, что она выводит...");
-            Console.WriteLine("\tIPHostEntry ipHost = Dns.GetHostEntry(\"localhost\");");
-            Console.WriteLine("\tforeach (IPAddress i in ipHost.AddressList)");
-            Console.WriteLine("\t{");
-            Console.WriteLine("\t\tConsole.WriteLine(i);");
-            Console.WriteLine("\t}");
+            Console.WriteLine("Предполагаю, что все IP данного хоста(т.е. компа)");
             Console.WriteLine();
 
             Console.WriteLine("************************************************");
