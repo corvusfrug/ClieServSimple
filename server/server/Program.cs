@@ -80,8 +80,7 @@ namespace server
                         // Показываем данные на консоли
                         Console.WriteLine(data+"\n");
                         // Отправляем ответ клиенту\
-                        reply = "Server-> Спасибо за запрос в " + data.Length.ToString()
-                                + " символов";
+                        reply = "Server-> Спасибо за запрос в " + DateTime.Now;
                        msg = Encoding.UTF8.GetBytes(reply);
                        handler.Send(msg);
 
