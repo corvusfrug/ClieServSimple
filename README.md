@@ -1,4 +1,4 @@
 # ClieServSimple
 My first NET programm
 *****
-<img src="https://s57e.storage.yandex.net/rdisk/a4f3928cf86f22fa0d556184e0fa99aba97976f58cef92978a124a2abb454766/5999fc14/e4yAmOpUdHfB_SQ08sGywfY4bBIBtpJIL-4NOvkN7ThG3g5CevMQqhmV6GOWzH4qoaoxdTOMDl2nUWlj9J_DXw==?uid=227757636&filename=3.gif&disposition=inline&hash=&limit=0&content_type=image%2Fgif&fsize=3305161&hid=5c988b672102110b8b9fd5c9f9185837&media_type=image&tknv=v2&etag=55552f167e163ea9a0d5ccd8da1b9650&rtoken=8FRkyRRKgU8w&force_default=yes&ycrid=na-eebc0ed199f29115fe41e9b4fbc41936-downloader1f&ts=55735dea82d00&s=7f47c2a8f2738bcd27199394502002928eb898ed9d0e1312013b76cab78f7ccd&pb=U2FsdGVkX19fCHMd2zZyVT11B0h0kKoo9guKyZ3Fn4BT7fDK0VBuCyo0raPcXU3gPBNoSWYxRfW6hlt6TdZicNnq-DtEHmeFdhfKK2NKRd0="/>
+<img src="https://4.downloader.disk.yandex.ru/disk/848521647107449b8c5ae3c525ed9e79cef68bc97e97986c9556cab091329104/5999fcd1/e4yAmOpUdHfB_SQ08sGywRsLrnqSXkli1pzGaMgmEMP3wEiPN_6C8TgNNYa7HQ24fNsFQH2EvkDfV_gs-dd4iQ%3D%3D?uid=227757636&filename=1.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&fsize=250511&hid=0c9012d9937c93b4e71790e53d7dbed9&media_type=image&tknv=v2&etag=b086c450436d043a4926edfa7fc3232a"/>
